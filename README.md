@@ -1,7 +1,36 @@
-# corona-paths
+# CoronaPaths.com
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Track your path when leaving your house.  If you get diagnosed, share your paths over the last couple days to the public blockchain database.  Still healthy?  Automatically get updates if your path crossed with someone who was diagnosed.  All data is stored on your phone until you share it to the blockhain.  We collect no data.  Visit our website and search your area to see the paths shared near you.
+
+accessible first
+almost backend-less
+
+privacy issues
+- dont share the path from your home to your first destination
+- don't share the path from your last destination to your home
+- our app will alert you if you're trying to share paths close to your home (if you've entered your home address)
+- same goes for any addresses you enter
+
+need to invent an efficient browser based blockchain
+- peerjs for p2p
+- research preexising block chains with data storage, but needs to be quick and cheap
+- or roll-our-own with a generic blockchain lib
+- taylor it to this specific data set: shared geojson data, tightly restricted to a template
+- bonus points if the proof-of-work validates the geojson against a template
+- bonus points if it allows clients to only have to download/track data within certain areas
+- bonus points if the system allows the sharer to update or append statuses
+- peerjs has user ids but they should be separate from the bc id's
+- is there such thing as a sparsely distributed blockchain?  bandwidth and data storage issues are a concern
+- we will have to spin up node.js servers to serve as stable/fast blockchain nodes
+- we might have to spin up fastboot servers to serve no-js/no-bandwidth users in 3rd countries
+- may need some type of authenticity score, i.e. if enough people flag a path as unreasonable/invalid, its supressed
+
+poc
+- ui: track a path (full flow, show/track on map/delete)
+- ui: connect to a p2p block-chain
+- ui: share paths (basic wizard, with ability to update status, i.e. false alarm)
+- ui: receive path updates (browse, dsiplay on map)
+- ui: check path updates for intersections and notify
 
 ## Prerequisites
 
